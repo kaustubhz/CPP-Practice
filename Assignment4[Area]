@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<math.h>
+//#define PI 3.1415
+double areaofcircle(double);
+int areaofsquare(int);
+int areaofrectangle(int,int);
+int main()
+{
+	
+	double radius;int squareside,rectlength,rectbreadth;
+	printf("\nEnter radius of Circle: ");
+	scanf("%lf",&radius); 
+	printf("\nEnter side of square: ");
+	scanf("%d",&squareside);
+	printf("\nEnter length of rectangle: ");
+	scanf("%d",&rectlength);
+	printf("\nEnter breadth of rectangle: ");
+	scanf("%d",&rectbreadth);
+	printf("\nThe area of Circle is %f Sq.Units",areaofcircle(radius));
+	printf("\nThe area of Square is %d Sq.Units",areaofsquare(squareside));
+	printf("\nThe area of Rectangle is %d Sq.Units",areaofrectangle(rectlength,rectbreadth));
+}
+
+double areaofcircle(double radius)
+{
+	return M_PI*pow(radius,2);
+}
+
+int areaofsquare(int squareside)
+{
+	return (int)pow(squareside,2);
+}
+
+
+int areaofrectangle(int rectlength,int rectbreadth)
+{
+	return rectlength*rectbreadth;
+}
