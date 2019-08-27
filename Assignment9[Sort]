@@ -1,0 +1,59 @@
+#include<stdio.h>
+int acceptArray(int [],int);
+int displayArray(int [],int);
+int sortArray(int[],int);
+int main()
+{
+	int number;
+	printf("\nEnter a number to accept elements in array: ");
+	scanf("%d",&number);
+	int array[number];
+	acceptArray(array,number);
+	displayArray(array,number);
+	sortArray(array,number);
+	printf("After sorting, ");
+	sortArray(array,number);
+	displayArray(array,number);
+	return 0;
+}
+
+int acceptArray(int arr[],int number)
+{
+	int i;
+	for(i=0;i<number;i++)
+	{
+		printf("\nEnter number %d: ",i+1);
+		scanf("%d",&arr[i]);
+	}
+	printf("\n");
+	return 0;
+}
+
+int displayArray(int arr[],int number)
+{
+	int i;
+	printf("Array elements are: [");
+	for(i=0;i<number;i++)
+	{
+		printf(" %d ",arr[i]);
+	}
+	printf("]\n");
+	return 0;
+}
+
+int sortArray(int arr[],int number)
+{
+	int x,y,temp;
+	for(x=0;x<number;x++)
+	{
+		for(y=x+1;y<number;y++)
+		{
+			if(arr[x]>arr[y])
+			{
+				temp=arr[x];
+				arr[x]=arr[y];
+				arr[y]=temp;
+			}
+		}
+	}
+}
