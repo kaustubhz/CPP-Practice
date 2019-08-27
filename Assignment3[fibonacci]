@@ -1,0 +1,26 @@
+#include<stdio.h>
+int fibonacci(int,int,int);
+int main()
+{
+	int number; //To accept a number
+	printf("\nEnter a number of terms for fibonacci series: ");
+	scanf("%d",&number);
+	printf("Fibonacci series [ 0 1");
+	fibonacci(number-2,0,1);
+	printf(" ]");
+}
+
+int fibonacci(int count,int x,int y)
+{
+	if(count==0)
+		return 0;
+	else
+	{
+		int z=y; //z is temporary variable
+		y+=x;
+		x=z;
+//		count--;
+		printf(" %d",y);
+		fibonacci(--count,x,y);
+	}
+}
