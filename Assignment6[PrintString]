@@ -1,0 +1,31 @@
+#include<stdio.h>
+int acceptString(char [],int);
+
+int acceptString(char str[],int number)
+{
+	int i;
+	/*for(i=0;i<number;i++)
+	{
+		printf("\nEnter a new character: ");
+		//str[i]=getchar();
+		scanf("%c",&str[i]);
+	}*/
+	do
+	{
+	printf("\nEnter a new character: ");
+	scanf(" %c",&str[i++]);
+	}while(i!=number);
+	str[i]='\0';
+	printf("The string is [%s]",str);
+}
+
+
+int main()
+{
+	int number;
+	printf("\nEnter n characters for a string: ");
+	scanf("%d",&number);
+	char str[number+1];
+	acceptString(str,number);
+	return 0;
+}
