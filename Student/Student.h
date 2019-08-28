@@ -5,11 +5,16 @@ using namespace std;
 class Student
 {
 	private:
-		int Roll;
-		string Name;
-		float Per;
+		int roll;
+		string course;
+		string name;
 	public:
 		Student();
+		Student(int,string,string);
+		~Student();
+		int GetRoll() const;
 		void Accept();
-		void Display();
+		void Display() const;
+		static int Search(Student*,int,int);
+
 };
