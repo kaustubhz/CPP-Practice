@@ -74,9 +74,9 @@ void Player::SortByName(Player* p,int size)
 	}
 }
 
-void Player::WriteToFile(Player *p,int size)
+void Player::WriteToFile(Player *p,int size,const char* file)
 {
-	ofstream fout("Player.txt");
+	ofstream fout(file);
 	for(int i=0;i<size;i++)
 	{
 		fout<<p[i].name<<"\t"<<p[i].age<<"\t"<<p[i].country<<endl;

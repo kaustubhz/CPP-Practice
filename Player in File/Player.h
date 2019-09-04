@@ -17,7 +17,7 @@ class Player
 	void Display() const;
 	static void SortByAge(Player*,int);
 	static void SortByName(Player*,int);
-	static void WriteToFile(Player*,int);
+	static void WriteToFile(Player*,int,const char* ="Player.txt");
 	static void ReadFromFile();
 	static void CopyFile(char*,char*);
 };
