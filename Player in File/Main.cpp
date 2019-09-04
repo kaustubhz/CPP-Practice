@@ -35,7 +35,7 @@ int main(int argc,char *argv[])
 	}
 	else
 	{
-		Player::WriteToFile(p,number);
+		Player::WriteToFile(p,number,argv[1]);
 		Player::CopyFile(argv[1],argv[2]);
 	}
 	return 0;
