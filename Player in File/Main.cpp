@@ -30,11 +30,13 @@ int main(int argc,char *argv[])
 	  }*/
 	if(argc<3)
 	{
+		cout<<"\nCopying file(s) without Command line arguments";
 		Player::WriteToFile(p,number);
 		Player::ReadFromFile();
 	}
 	else
 	{
+		cout<<"\nCopying file(s) with Command line arguments";
 		Player::WriteToFile(p,number,argv[1]);
 		Player::CopyFile(argv[1],argv[2]);
 	}
