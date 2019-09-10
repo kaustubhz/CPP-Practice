@@ -59,27 +59,42 @@ int MyTime::compare(MyTime t1)
 }
 
 int MyTime::differ(MyTime t1)
-{
+{	
 	int totalDays=0;
-	totalDays=totalDays+abs(2000-t1.yyyy)*365;
+	//If year is same
+	if(yyyy==t1.yyyy)
+	{
+/*	totalDays=totalDays+abs(2000-t1.yyyy)*365;
 	totalDays=totalDays+ConvertToDays(t1.mm);
-	totalDays=totalDays+t1.dd;
+	totalDays=totalDays+t1.dd;*/
 
-	int totalDays1=0;
+		//Addidng remaining days of a month in first date
+		totalDays=totalDays+Daysinmonth(mm)-dd;
+		//Adding days of remaining months
+		for(int i=mm+1;i<t1.mm;i++)
+			totalDays+=Daysinmonth(i);
+		//Adding days of month in 2nd date
+		totalDays+=t1.dd;
+	}
+	else if(yyyy<t1.yyyy)
+	{
+		
+	}
+	/*int totalDays1=0;
 	totalDays1=totalDays1+abs(2000-yyyy)*365;
 	totalDays1=totalDays1+ConvertToDays(t1.mm);
-	totalDays1=totalDays1+t1.dd;
+	totalDays1=totalDays1+t1.dd;*/
 
-	return abs(totalDays-totalDays1);
+	return totalDays;
 }
 
 int MyTime::Daysinmonth(int nn)
 {
 	if(nn==2)
 		return 28;
-	if(nn<=7 && (nn%2)!=0)
+	if(nn<=7 && nn%2!=0)
 		return 31;
-	else if(nn>7 && (nn%2)==0)
+	else if(nn>7 && nn%2==0)
 		return 31;
 	else
 		return 30;

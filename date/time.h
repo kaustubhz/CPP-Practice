@@ -14,8 +14,7 @@ class MyTime
 		static int Daysinmonth(int);
 		static int ConvertToDays(int);
 		~MyTime();
-		MyTime operator +(MyTime);
-		MyTime operator -(MyTime);
 		MyTime operator !=(MyTime);
 		MyTime operator ==(MyTime);
+		MyTime operator =(MyTime);
 };
